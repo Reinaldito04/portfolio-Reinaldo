@@ -1,0 +1,59 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+import { ViewTransitions } from 'astro:transitions';
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+	<body>
+		<slot  />
+	</body>
+	
+</html>
+<style is:global>
+	
+	html {
+		font-family: system-ui, sans-serif !important;
+		background: rgb(53, 47, 68) !important;
+		background-size: 224px;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+	::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(53, 47, 68); /* Cambia el color de la barra de desplazamiento */
+}
+
+/* Cambiar el color de fondo de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background-color: rgb(51, 7, 74); /* Cambia el color de fondo de la barra de desplazamiento */
+}
+</style>

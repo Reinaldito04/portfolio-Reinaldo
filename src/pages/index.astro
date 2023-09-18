@@ -1,0 +1,129 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Navbar from "../components/Navbar.astro";
+import {    BsWhatsapp  } from "react-icons/bs";
+
+---
+
+<Layout title="Portofolio Reinaldo Bellorin.">
+ 
+  <Navbar />
+  
+  <div class="container-index" transition:animate="slide">
+    <p class="saludo">Hola, bienvenido👋</p>
+    <h3 class="title-text">Soy Reinaldo Bellorin</h3>
+    <h3 class="title-text">TSU en Informatica & Developer</h3>
+
+    <p class="saludo">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente,
+      commodi! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae,
+      fuga. Ab nisi error inventore, esse officia omnis praesentium cumque
+      accusamus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Aliquam nesciunt iure nihil adipisci laborum sed! Est voluptates dolores
+      corrupti nobis.
+    </p>
+    <div class="container-botones">
+        <button class="button"
+      ><a href="#" class="button-content">
+        
+        
+        Descargar CV</a></button
+    >
+    
+        <button class="button ws-button">
+            <a href="https://api.whatsapp.com/send/?phone=%2B584248415403&text&type=phone_number&app_absent=0" target="_blank" class="button-content">
+               <span><BsWhatsapp/>
+                </span>
+            WhatsApp</a>
+        </button> 
+
+    </div>
+    
+      
+
+    
+   
+  </div>
+</Layout>
+
+<style>
+    span{
+        color: green;
+        font-size: 1.3rem;
+        padding-top: 2px;
+    }
+   
+    .container-botones{
+        margin-left: 15%;
+        width: 55%;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+  a {
+    list-style: none;
+    text-decoration: none;
+    color: rgb(250, 240, 230);
+  }
+  button {
+    font-size: 1.2rem;
+  }
+  .ws-button{
+    ;
+  }
+  .button {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: #3d3a4e;
+    background-size: 400%;
+    color: #fff;
+    border: none;
+  }
+
+  .button:hover::before {
+    transform: scaleX(1);
+  }
+
+  .button-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(
+      82.3deg,
+      rgba(150, 93, 233, 1) 10.8%,
+      rgba(99, 88, 238, 1) 94.3%
+    );
+    transition: all 0.475s;
+  }
+  .title-text {
+    font-size: 1.8rem;
+    line-height: 0.8;
+  }
+  .saludo {
+    font-style: italic;
+    font-size: 1.4rem;
+    line-height: 28px;
+    width: 85%;
+  }
+  .container-index {
+    color: rgb(250, 240, 230);
+    margin-top: 8%;
+
+    margin-left: 30%;
+  }
+</style>

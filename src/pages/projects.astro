@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Card from '../components/Card.astro';
+
+---
+
+<Layout title="Portofolio Reinaldo Bellorin.">
+	
+<Navbar/>
+<div class="container-projects" transition:animate="slide">
+    <h2 class="text-project">Proyectos</h2> 
+    <div class="container">
+
+        <div class="container-cards-projects">
+            <Card
+            title='Portafolio',
+            body='Portfolio web donde muestro información sobre mí como el stack tecnológico, proyectos personales, poder contactar conmigo vía redes sociales o correo electrónico, ver mi experiencia.',
+            repo='https://github.com/Reinaldito04/portfolio',
+            img="/Portfolio.png",
+            tecnologies={["/astro.svg"]}
+            />
+            <Card
+            title='Aplicacion de Escritorio'
+            body='Aplicacion de Escritorio para el control de consultas e historias medicas de un consultorio, permite agregar,eliminar,editar y actualizar citas ,pacientes ,procedimientos ,etc'
+            repo='test'
+            img='/consultorio.png'
+            tecnologies={["/python.svg","/qt.svg"]} 
+            />
+            <Card
+            title='Periodico Escolar'
+            body='Periodico Escolar con la capacidad de subir noticias , acotecimientos importantes , curiosidades ,etc , además cuenta con información referent a la institución '
+            repo='https://github.com/Reinaldito04/Periodico'
+            img='/periodico.png'
+            tecnologies={["/php.svg","/jquery.svg" , "/boostrap.svg"]} 
+            />
+            <Card
+            title='Heladeria (test)'
+            body='Aplicación web SPA realizada con React con componentes reutilizables, prueba del instituto (estudiantil)'
+            repo='https://github.com/Reinaldito04/heladeria-reinaldo'
+            img='/heladeria.png'
+            tecnologies={["/react.svg"]} 
+            />
+        </div>
+       
+    </div>
+</div>
+
+  
+
+
+
+</Layout>
+
+<style>
+    .container-cards-projects{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px; /* Espacio entre los elementos */
+    }
+    .text-project{
+        text-align: center;
+    }
+.container-projects{
+   
+    color: rgb(250, 240, 230);
+    margin-top: 8%;
+    margin-left: 30%;
+}
+</style>
+
