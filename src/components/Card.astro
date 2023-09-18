@@ -14,7 +14,10 @@ const { repo, img, tecnologies, title, body } = Astro.props;
 
 	<div class="container-card">
 		<a href={repo} target="_blank">
-			<img src={img} alt={title} />
+			<div class="div-img">
+				<img src={img} class="img-repo" alt={title} />
+			</div>
+			
 		</a>
 		<h5 class="title-card">
 			{title}
@@ -42,7 +45,20 @@ const { repo, img, tecnologies, title, body } = Astro.props;
 
 
 <style>
+	.div-img{
+		overflow: hidden;
+		border-top-right-radius: 25px;
+		border-top-left-radius:25px ;
+	}
+	.img-repo{
+		transition: transform 0.5s;
+	}
+	.img-repo:hover{
+		transform: scale(1.2);
+		border-radius: 25px;
+	}
 	.tenologias img{
+		
 		width: 40px;
 		height: 40px;
 		margin-bottom: -10px;

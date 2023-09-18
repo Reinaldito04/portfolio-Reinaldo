@@ -6,5 +6,42 @@ import Navbar from '../components/Navbar.astro';
 <Layout title="About">
 	
 <Navbar/>
-
+<div class="container-about" transition:animate="slide">
+    <h3>Sobre mi</h3>
+    <div class="container-p" >
+        <p>
+            "Soy Reinaldo Bellorin, un estudiante de TSU en Informática de Venezuela, con una pasión arraigada por el desarrollo web front-end. Mi viaje en el mundo de la informática me ha llevado a dominar lenguajes como Python, PHP y JavaScript. Pero lo que realmente me impulsa es la creación de experiencias web cautivadoras y funcionales.
+    
+       
+      
+            Me emociona la idea de convertir conceptos en realidad, diseñando interfaces web que no solo sean visualmente atractivas, sino también eficientes y amigables para los usuarios. Mi constante búsqueda de oportunidades de aprendizaje me impulsa a mantenerme al día con las últimas tendencias y tecnologías del desarrollo front-end.
+        </p>
+    </div>
+    
+</div>
 </Layout>
+<style>
+    .container-p{
+        margin: 0 auto;
+        padding: 5px;
+       
+        width: 90%;
+
+    }
+h3{
+    font-size: 1.5rem;
+    text-align: center;
+}
+p{
+
+    line-height: 1.5;
+    text-align: center;
+    font-size: 1.3rem;
+}
+.container-about {
+    color: rgb(250, 240, 230);
+    margin-top: 8%;
+
+    margin-left: 30%;
+  }
+</style>
