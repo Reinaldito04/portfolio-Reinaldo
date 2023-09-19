@@ -1,6 +1,9 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
+
+
+
 ---
 
 <Layout title="Contact">
@@ -9,25 +12,25 @@ import Layout from "../layouts/Layout.astro";
     <div class="container-contact" transition:animate="slide">
         <h3>Contacto</h3>
 
-        <form  action="https://formsubmit.co/reybellorin82@gmail.com" name="contact" method="POST">
+        <form  id="form" name="contact" method="POST">
             <div class="container-form">
                 <div class="form-group">
-                    <label for="txtNombre">Nombre:</label>
-                    <input type="text" id="txtNombre" name="nombre" required>
+                    <label for="from_name">Nombre:</label>
+                    <input type="text" id="from_name" name="from_name" required>
                 </div>
         
                 <div class="form-group">
-                    <label for="txtEmail">Email:</label>
-                    <input type="email" id="txtEmail" name="email" required>
+                    <label for="email_id">Email:</label>
+                    <input type="email" id="email_id" name="email_id" required>
                 </div>
         
                 <div class="form-group">
-                    <label for="txtMensaje">Mensaje:</label>
-                    <textarea id="txtMensaje" name="mensaje" cols="30" rows="10" required></textarea>
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" cols="30" rows="10" required></textarea>
                 </div>
         
                 <div class="button-group">
-                    <button type="submit">
+                    <button type="submit" id="button"  value="Send Email">
                         <div class="svg-wrapper-1">
                           <div class="svg-wrapper">
                             <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -41,13 +44,43 @@ import Layout from "../layouts/Layout.astro";
                 </div>
             </div>
         </form>
+        <p id="contact-mensaje"></p>
     </div>
 
+<script>
+  const btn = document.getElementById('button');
+  const mensaje = document.getElementById('contact-mensaje')
+  const form = document.getElementById('form')
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
 
+   btn.value = 'Sending...';
+
+   const serviceID = 'service_g3h9lbv';
+   const templateID = 'template_p8itikv';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      mensaje.textContent = "Mensaje Enviado Correctamente ✅"
+      form.reset()
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+      mensaje.textContent = "Mensaje no enviado  ❌"
+    });
+});
+</script>
 
 </Layout>    
 
 <style>
+  p{
+    text-align: center;
+    color: #0EB87A;
+    font-size: 1.5rem;
+  }
     .container-form {
     max-width: 50%;
     margin: 0 auto;
